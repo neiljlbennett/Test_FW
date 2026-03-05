@@ -67,7 +67,7 @@ void Blink_Task(void)
 
 static void App_SetVTOR(void)
 {
-    SCB->VTOR = (uint32_t)&g_pfnVectors;
+    SCB->VTOR = 0x0800c200;//(uint32_t)&g_pfnVectors;
     __DSB();
     __ISB();
 }
@@ -82,7 +82,7 @@ int main(void)
 
   /* USER CODE BEGIN 1 */
 
-	App_SetVTOR();
+	//App_SetVTOR();  done in SystemInit instead
 
   /* USER CODE END 1 */
 
